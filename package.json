@@ -1,6 +1,6 @@
 {
 	"name": "hardhat-tx-decoder",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "A Hardhat plugin that analyze and decode Ethereum transactions effortlessly. Simplifies the debugging process by extracting transaction details, decoding contract events, and identifying revert reasons directly within your Hardhat workflow",
 	"main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
