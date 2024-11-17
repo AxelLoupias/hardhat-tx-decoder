@@ -1,9 +1,11 @@
 {
 	"name": "hardhat-tx-decoder",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "A Hardhat plugin that analyze and decode Ethereum transactions effortlessly. Simplifies the debugging process by extracting transaction details, decoding contract events, and identifying revert reasons directly within your Hardhat workflow",
-	"main": "src/index.ts",
+	"main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
 	"files": [
+		"dist",
 		"src/",
 		"README.md"
 	],
@@ -12,7 +14,10 @@
 		"lint": "npx eslint . --ext js,ts;",
 		"prettier:fix": "prettier --write \"**/*.{ts,js}\"",
 		"lint:fix": "npx eslint . --ext js,ts --fix",
-		"fix": "npm run prettier:fix; npm run lint:fix"
+		"fix": "npm run prettier:fix; npm run lint:fix",
+		"build": "tsc",
+		"watch": "tsc -w",
+    "prepublishOnly": "npm run build"
 	},
 	"repository": {
 		"type": "git",
@@ -36,7 +41,8 @@
 		"@nomicfoundation/hardhat-ethers": "^3.0.4",
 		"ethers": "^6.8.0",
 		"hardhat": "^2.18.2",
-		"typescript": "^5.2.2"
+		"typescript": "^5.2.2",
+		"@types/mocha": "^5.2.6"
 	},
 	"peerDependencies": {
 		"@nomicfoundation/hardhat-ethers": "^3.0.4",
