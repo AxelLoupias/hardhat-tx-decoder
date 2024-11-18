@@ -1,13 +1,13 @@
 import { task } from 'hardhat/config'
 import '@nomicfoundation/hardhat-ethers'
 import { type Artifacts } from 'hardhat/types'
-import { TransactionDecoder } from 'blockchain-tx-decoder'
-import { type TxData } from 'blockchain-tx-decoder/src/types'
+import { TransactionDecoder, TxData } from 'blockchain-tx-decoder'
 
 task('txDecode', 'Displays the transaction with decoded data')
 	.addPositionalParam('txId', 'Transaction id you want to decode')
 	.setAction(async (args, hre) => {
 		const { txId } = args
+		await hre.run('compile')
 		const allABIs = await obtainABIs(hre.artifacts)
 
 		const txDecoder = new TransactionDecoder({
@@ -28,6 +28,7 @@ task('txDecode', 'Displays the transaction with decoded data')
 			numericSeparator: false,
 		})
 	})
+
 async function obtainABIs(artifacts: Artifacts): Promise<any> {
 	const namedArtifacts = await artifacts.getAllFullyQualifiedNames()
 
