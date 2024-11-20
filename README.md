@@ -17,7 +17,7 @@ After installing the plugin, you need to add it to your Hardhat project configur
 
 Import the plugin in `hardhat.config.ts`:
 ```typescript
-import 'hardhat-transaction-decoder';
+import 'hardhat-tx-decoder';
 ```
 ---
 
