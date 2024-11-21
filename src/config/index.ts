@@ -14,16 +14,18 @@ class HardhatTxDecoderProvider extends ProviderWrapper {
 		} catch (error) {
 			if (
 				ProviderError.isProviderError(error) &&
-				'data' in (error.data as any)
+				error.data != null &&
+				typeof error.data === 'object' &&
+				'data' in error.data
 			) {
-				error.data = (error.data as any).data
+				error.data = error.data.data
 			}
 			throw error
 		}
 	}
 }
 
-extendProvider(async (provider, config, network) => {
+extendProvider(async (provider) => {
 	const newProvider = new HardhatTxDecoderProvider(provider)
 	return newProvider
 })

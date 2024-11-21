@@ -3,7 +3,7 @@
 	"version": "1.0.2",
 	"description": "A Hardhat plugin that analyze and decode Ethereum transactions effortlessly. Simplifies the debugging process by extracting transaction details, decoding contract events, and identifying revert reasons directly within your Hardhat workflow",
 	"main": "dist/index.js",
-  "types": "dist/index.d.ts",
+	"types": "dist/index.d.ts",
 	"files": [
 		"dist",
 		"src",
@@ -13,11 +13,11 @@
 		"prettier": "prettier --check \"**/*.{ts,js}\"",
 		"lint": "npx eslint . --ext js,ts;",
 		"prettier:fix": "prettier --write \"**/*.{ts,js}\"",
-		"lint:fix": "npx eslint . --ext js,ts --fix",
+		"lint:fix": "npx eslint . --fix",
 		"fix": "npm run prettier:fix; npm run lint:fix",
 		"build": "tsc",
 		"watch": "tsc -w",
-    "prepublishOnly": "npm run build"
+		"prepublishOnly": "npm run build"
 	},
 	"repository": {
 		"type": "git",
@@ -38,12 +38,16 @@
 	"author": "Axel Loupias",
 	"license": "ISC",
 	"devDependencies": {
+		"@eslint/js": "^9.15.0",
 		"@nomicfoundation/hardhat-ethers": "^3.0.4",
-		"ethers": "^6.8.0",
-		"hardhat": "^2.18.2",
-		"typescript": "^5.2.2",
 		"@types/mocha": "^5.2.6",
-		"prettier": "^3.3.3"
+		"eslint": "^9.15.0",
+		"ethers": "^6.8.0",
+		"globals": "^15.12.0",
+		"hardhat": "^2.18.2",
+		"prettier": "^3.3.3",
+		"typescript": "^5.2.2",
+		"typescript-eslint": "^8.15.0"
 	},
 	"peerDependencies": {
 		"@nomicfoundation/hardhat-ethers": "^3.0.4",

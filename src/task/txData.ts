@@ -29,7 +29,7 @@ task('txDecode', 'Displays the transaction with decoded data')
 		})
 	})
 
-async function obtainABIs(artifacts: Artifacts): Promise<any> {
+async function obtainABIs(artifacts: Artifacts) {
 	const namedArtifacts = await artifacts.getAllFullyQualifiedNames()
 
 	return await Promise.all(
